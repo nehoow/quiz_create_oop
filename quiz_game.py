@@ -27,3 +27,8 @@ class QuizGame:
         if not self.questions:
             print("No questions loaded. Please create a quiz first.")
             return
+        
+        print("\n--- Starting Quiz ---")
+        self.score = 0
+        quiz_copy = list(self.questions)
+        random.shuffle(quiz_copy)
