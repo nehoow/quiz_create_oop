@@ -23,3 +23,7 @@ class QuizGame:
                 correct_answer_line = file.readline().strip()
                 correct_answer_key = correct_answer_line.removeprefix("correct answer: ")
                 self.questions.append(Questions(question_text, choices, correct_answer_key))
+    def start_quiz(self):
+        if not self.questions:
+            print("No questions loaded. Please create a quiz first.")
+            return
