@@ -3,3 +3,7 @@ class Questions:
         self.question_text = question_text
         self.choices = choices
         self.correct_answer_key = correct_answer_key
+     def display(self):
+        print(f"\nQuestion: {self.question_text}")
+        for letter, choice in self.choices.items():
+            print(f"{letter}. {choice}")
