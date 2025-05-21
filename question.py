@@ -9,3 +9,5 @@ class Questions:
             print(f"{letter}. {choice}")
     def is_correct(self, user_answer_key):
         return user_answer_key.lower() == self.correct_answer_key
+    def get_correct_answer_text(self):
+        return self.choices.get(self.correct_answer_key, "N/A")
