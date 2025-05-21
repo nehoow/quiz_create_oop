@@ -24,3 +24,15 @@ class QuizCreator:
     def write_quiz_to_file(self, question_obj):
         with open(self.filename, "a") as file:
             file.write(question_obj.to_file_format())
+    def create_new_quiz(self):
+        if os.path.exists(self.filename):
+            os.remove(self.filename)
+            print(f"Existing file '{self.filename}' deleted.")
+
+        print("\n--- Creating New Quiz ---")
+        while True:
+            question_obj = self.create_quiz_item()
+            if question_obj is None:
+                break
+            self.write_quiz_to_file(question_obj)
+        print("Quiz creation finished. Questions saved to 'quiz.txt'.")
